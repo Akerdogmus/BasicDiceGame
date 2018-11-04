@@ -1,0 +1,49 @@
+
+A.Kerem Erdogmus <akerdogmus@gmail.com>
+21 Tem 2015 Sal 16:09
+Alıcı: A.Kerem
+
+#include<stdio.h>
+#include<stdlib.h>
+#include<time.h>
+
+
+main()
+{
+	int zar1,zar2,oyuncua=0,oyuncub=0,a,b;
+
+	int i;
+
+	srand(time(NULL));
+	for(i=0;i<10;i++){
+		zar1=rand()%6+1;
+		zar2=rand()%6+1;
+
+		a=zar1+zar2;
+
+		if(a<=5) oyuncua=oyuncua-1;
+		if(a>5&&a<=9)oyuncua=oyuncua+1;
+		if(a>=10)oyuncua=oyuncua+2;
+		if(a%3==0)oyuncua=oyuncua+1;
+
+		zar1=rand()%6+1;
+		zar2=rand()%6+1;
+
+		b=zar1+zar2;
+
+		if(b<=5) oyuncub=oyuncub-1;
+		if(b>5&&b<=9)oyuncub=oyuncub+1;
+		if(b>=10)oyuncub=oyuncub+2;
+		if(b%3==0)oyuncub=oyuncub+1;
+	}
+
+	printf("oyuncu a= %d  oyuncu b= %d\n",oyuncua,oyuncub);
+
+	if(oyuncua>oyuncub) printf("A oyuncusu kazandi\n");
+	
+	if(oyuncua<oyuncub) printf("B oyuncusu kazandi\n");
+
+	
+	if(oyuncua==oyuncub) printf("Berabere\n");
+	system("pause");
+}
